@@ -94,7 +94,6 @@ namespace Day2
         public static bool IsLineValid2(string line)
         {
             var p = new Policy(line);
-            int count = 0;
 
             var c1 = p.PassWd.Trim()[p.MinAmount - 1];
             var c2 = p.PassWd.Trim()[p.MaxAMount - 1];
