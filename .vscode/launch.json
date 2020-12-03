@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch Day2",
+            "name": ".NET Core Launch Day 2",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/Day2.dll",
+            "preLaunchTask": "build2",
+            "program": "${workspaceFolder}/Day2/bin/Debug/netcoreapp3.1/Day2.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Day2",
             "stopAtEntry": false,
             "console": "internalConsole"
         },
         {
-            "name": ".NET Core Launch Day3",
+            "name": ".NET Core Launch Day 3",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
@@ -27,10 +27,15 @@
             "stopAtEntry": false
         },
         {
-            "name": ".NET Core Attach",
+            "name": ".NET Core Launch Day 4",
             "type": "coreclr",
-            "request": "attach",
-            "processId": "${command:pickProcess}"
+            "request": "launch",
+            "preLaunchTask": "build4",
+            "program": "${workspaceFolder}/Day4/bin/Debug/netcoreapp3.1/Day4.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Day4",
+            "console": "internalConsole",
+            "stopAtEntry": false
         }
     ]
 }
