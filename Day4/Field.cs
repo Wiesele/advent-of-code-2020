@@ -32,11 +32,6 @@ namespace Day4
         }
 
         public abstract bool IsFieldValid(string line);
-
-        public string GetFieldValue(string Line)
-        {
-            
-        }
     }
 
 }

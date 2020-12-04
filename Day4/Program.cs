@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Day4.FieldHandler;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -14,11 +15,12 @@ namespace Day4
                 new YearHandler("byr", 1920, 2002),
                 new YearHandler("iyr", 2010, 2020),
                 new YearHandler("eyr", 2020, 2030),
-                new Field("hgt"),
-                new Field("hcl"),
-                new Field("ecl"),
-                new Field("pid"),
-                new Field("cid", true)
+                new HeightHandler(),
+                new HairColorHandler(),
+                new PidHandler(),
+                new EyeColorHandler(),
+
+                //new Field("cid", true)
             };
 
 
@@ -37,7 +39,7 @@ namespace Day4
                     var isPassportValid = true;
                     foreach(var field in Fields)
                     {
-                        if(!field.IsAvailable(completeLine))
+                        if(!field.IsFieldValid(completeLine))
                         {
                             isPassportValid  = false;
                             falseStatement = field.FieldName;

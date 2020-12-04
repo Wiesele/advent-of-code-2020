@@ -1,4 +1,7 @@
-namespace Day4
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Day4.FieldHandler
 {
     public class YearHandler: Field
     {
@@ -12,7 +15,23 @@ namespace Day4
 
         public override bool IsFieldValid(string line)
         {
-            throw new System.NotImplementedException();
+            var regex = new Regex(FieldName + ":" + "\\d*");
+
+            if (this.IsAvailable(line))
+            {
+                var s = regex.Match(line).Value;
+                var splitted = s.Split(":");
+
+                if(splitted[1].Length == 4)
+                {
+                    var i = int.Parse(splitted[1]);
+                    if(Enumerable.Range(MinYear, (MaxYear - MinYear) + 1).Contains(i))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }
